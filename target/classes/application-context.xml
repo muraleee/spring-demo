@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+	<!-- 
+	<bean id="beanB" class="com.demo.spring.BeanB" />
+	
+	<bean class="com.demo.spring.BeanA" id="beanA">
+		<constructor-arg type="com.demo.spring.BeanB"  ref="beanB" />
+			
+		
+	</bean>
+	 
+	 
+	<bean id="beanB" class="com.demo.spring.BeanB"></bean>
+	 
+	<bean class="com.demo.spring.BeanC">
+		<property name="age" value="23" />
+		<property name="beanB" ref="beanB"></property>
+			
+		
+	</bean>
+	-->
+	
+	<bean id="beanB" class="com.demo.spring.BeanB" c:value="Test">
+	</bean>
+	
+	<bean class="com.demo.spring.BeanA" p:prop1="23" p:beanB-ref="beanB">
+		
+	</bean>
 </beans>
+
+
